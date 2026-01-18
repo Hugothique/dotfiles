@@ -1,0 +1,1 @@
+/home/bouff/.local/share/caelestia/fish
