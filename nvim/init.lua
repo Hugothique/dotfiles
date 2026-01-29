@@ -2,6 +2,13 @@ vim.g.mapleader = "<Space>"
 vim.g.maplocalleader = "<Space>"
 
 vim.opt.termguicolors = true
+
+-- Show line numbers etc
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = "number"
+vim.opt.cursorline = true
+
 require("config.lazy")
 require("config.mappings")
 
@@ -20,37 +27,8 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   end,
 })
 
+-- To move in the appropriate plugin
 -- vim.diagnostic.config({ virtual_text = true })
 vim.diagnostic.config({ virtual_lines = true })
 
--- C/C++ {{{
-vim.lsp.config.clangd = {
-  cmd = {
-    "clangd",
-    "-j=" .. 2,
-    "--background-index",
-    "--clang-tidy",
-    "--inlay-hints",
-    "--fallback-style=llvm",
-    "--all-scopes-completion",
-    "--completion-style=detailed",
-    "--header-insertion=iwyu",
-    "--header-insertion-decorators",
-    "--pch-storage=memory",
-  },
-  filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
-  root_markers = {
-    "CMakeLists.txt",
-    ".clangd",
-    ".clang-tidy",
-    ".clang-format",
-    "compile_commands.json",
-    "compile_flags.txt",
-    "configure.ac",
-    ".git",
-    vim.uv.cwd(),
-  },
-}
-vim.lsp.enable("clangd")
--- }}}
-
+vim.cmd("colorscheme gruvbox")

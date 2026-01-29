@@ -27,5 +27,6 @@ require("lazy").setup({
     { "nvim-tree/nvim-web-devicons", opts = {} },
     -- import your plugins
     { import = "plugins" },
+    { import = "plugins.colorschemes"},
   },
 })
