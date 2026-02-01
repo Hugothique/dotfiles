@@ -2,7 +2,7 @@ return {
 	"stevearc/conform.nvim",
 	config = function()
 		local conform = require("conform")
-	
+
 		conform.setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
@@ -13,6 +13,7 @@ return {
 				javascriptreact = { { "prettierd", "prettier", stop_after_first = true } },
 				typescriptreact = { { "prettierd", "prettier", stop_after_first = true } },
 				json = { { "prettierd", "prettier", stop_after_first = true } },
+				jsonc = { "prettierd" },
 				graphql = { { "prettierd", "prettier", stop_after_first = true } },
 				java = { "google-java-format" },
 				kotlin = { "ktlint" },
@@ -25,7 +26,7 @@ return {
 				rust = { "rustfmt" },
 				yaml = { "yamlfix" },
 				toml = { "taplo" },
-				css = { { "prettierd", "prettier", stop_after_first = true } },
+				css = { "prettierd" },
 				scss = { { "prettierd", "prettier", stop_after_first = true } },
 				sh = { "shellcheck" },
 				go = { "gofmt" },

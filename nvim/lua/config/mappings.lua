@@ -14,5 +14,4 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" 
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 map("n", "<leader>bh", ":bprev<cr>")
 map("n", "<leader>bl", ":bnext<cr>")
-map("n", "<leader>t", ":terminal")
-map("n", "<C-m>", ":bot term<cr>")
+map("n", "<leader>e", ":NnnPicker<cr>")
