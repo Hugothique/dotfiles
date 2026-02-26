@@ -1,21 +1,63 @@
 {
   "layer": "top",
-  "modules-left": ["niri/workspaces"],
-  "modules-center": ["niri/window"],
+  "modules-left": ["clock"],
+  "modules-center": ["niri/workspaces"],
+  //"width" : 1000,
   "modules-right": [
     "pulseaudio",
+	"custom/separator",
     "power-profiles-daemon",
     "battery",
+    "cpu",
+    "memory",
+    "network",	
+	"custom/separator",
     "temperature",
     "backlight",
-    "clock",
   ],
-  "sway/window": {
-    "max-length": 50,
+
+  "custom/separator": {
+    "format": "|",
+    "interval": "once",
+    "tooltip": false,
   },
+
   "battery": {
-    "format": "{capacity}% {icon}",
-    "format-icons": ["", "", "", "", ""],
+    "states": {
+      "good": 95,
+      "warning": 15,
+      "critical": 10,
+    },
+    "format": "{icon}",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt-click": "click-right",
+    "format-alt": "{icon} {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip": "{time}",
+    "style": "{capacity < 10 ? 'color: red;' : 'color: normal;'}",
+  },
+  "cpu": {
+    "interval": 10,
+    "format": "{}% ",
+    "max-length": 10,
+  },
+  "memory": {
+    "interval": 30,
+    "format": "{}% ",
+    "max-length": 10,
+  },
+  "network": {
+    "interface": "wlo1",
+    "format": "{ifname}",
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "format-disconnected": "", //An empty format will hide the module.
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
   },
   "clock": {
     "format-alt": "{:%a, %d. %b  %H:%M}",
@@ -33,24 +75,11 @@
     "format": "{temperatureC}°C ",
   },
   "niri/workspaces": {
-    "format": "{icon}",
+    "format": "{index}",
     "format-icons": {
-      // Named workspaces
-      // (you need to configure them in niri)
-      "browser": "",
-      "discord": "",
-      "chat": "<b></b>",
-
       // Icons by state
       "active": "",
       "default": "",
-    },
-  },
-  "niri/window": {
-    "format": "{}",
-    "rewrite": {
-      "(.*) - Mozilla Firefox": "🌎 $1",
-      "(.*) - zsh": "> [$1]",
     },
   },
   "power-profiles-daemon": {
