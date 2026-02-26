@@ -34,6 +34,17 @@ tooltip label {
 	background-color : @color9;
 	color : #ffffff;
 }
+
+#battery,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#backlight {
+	margin : 0 5px;
+}
+
 #battery {
   padding: 0 10px;
 }

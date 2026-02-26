@@ -4,15 +4,16 @@
   "modules-center": ["niri/workspaces"],
   //"width" : 1000,
   "modules-right": [
-    "pulseaudio",
-	"custom/separator",
     "power-profiles-daemon",
     "battery",
+    "custom/separator",
     "cpu",
     "memory",
-    "network",	
-	"custom/separator",
     "temperature",
+    "custom/separator",
+    "network",
+    "custom/separator",
+    "pulseaudio",
     "backlight",
   ],
 
@@ -28,15 +29,16 @@
       "warning": 15,
       "critical": 10,
     },
-    "format": "{icon}",
+    "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt-click": "click-right",
-    "format-alt": "{icon} {capacity}%",
+    "format-alt": "{icon} {time}",
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "tooltip": "{time}",
     "style": "{capacity < 10 ? 'color: red;' : 'color: normal;'}",
   },
+
   "cpu": {
     "interval": 10,
     "format": "{}% ",
@@ -76,11 +78,6 @@
   },
   "niri/workspaces": {
     "format": "{index}",
-    "format-icons": {
-      // Icons by state
-      "active": "",
-      "default": "",
-    },
   },
   "power-profiles-daemon": {
     "format": "{icon}",
