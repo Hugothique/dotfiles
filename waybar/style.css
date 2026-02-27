@@ -28,13 +28,6 @@ tooltip label {
   background: transparent;
   color: @foreground;
 }
-
-#workspaces button.active {
-	min-width: 50px;
-	background-color : @color9;
-	color : #ffffff;
-}
-
 #battery,
 #cpu,
 #memory,

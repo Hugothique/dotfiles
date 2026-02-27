@@ -1,7 +1,7 @@
 {
   "layer": "top",
-  "modules-left": ["clock"],
-  "modules-center": ["niri/workspaces"],
+  "modules-left": ["clock","niri/workspaces"],
+  "modules-center": [],
   //"width" : 1000,
   "modules-right": [
     "power-profiles-daemon",
@@ -62,7 +62,7 @@
     "max-length": 50,
   },
   "clock": {
-    "format-alt": "{:%a, %d. %b  %H:%M}",
+    "format": "{:%a, %d. %b - %H:%M}",
   },
   "backlight": {
     "device": "intel_backlight",
@@ -77,7 +77,8 @@
     "format": "{temperatureC}°C ",
   },
   "niri/workspaces": {
-    "format": "{index}",
+    "format": "{value}",
+	"current-only" : true,
   },
   "power-profiles-daemon": {
     "format": "{icon}",
