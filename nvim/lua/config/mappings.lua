@@ -12,6 +12,10 @@ vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find f
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
-map("n", "<leader>bh", ":bprev<cr>")
-map("n", "<leader>bl", ":bnext<cr>")
+-- map("n", "<S>bh", ":bprev<cr>")
+-- map("n", "<S>bl", ":bnext<cr>")
 map("n", "<leader>e", ":NnnPicker<cr>")
+
+-- map("n", "<leader>dd", vim.diagnostic.open_float())
+-- map("n", "<leader>dn", vim.diagnostic.goto_next())
+-- map("n", "<leader>dn", vim.diagnostic.goto_prev())
