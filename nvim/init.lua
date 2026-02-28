@@ -12,6 +12,7 @@ vim.opt.cursorline = true
 require("config.lazy")
 require("config.mappings")
 require("config.options")
+require("config.lsp")
 require("bufferline").setup({})
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
@@ -29,4 +30,4 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 -- vim.diagnostic.config({ virtual_text = true })
 vim.diagnostic.config({ virtual_lines = true })
 
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme tokyonight")
