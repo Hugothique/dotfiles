@@ -15,10 +15,10 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" 
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 
 -- Buffers
-vim.keymap.set("n", "bh", ":bprev<cr>", {desc = "Go to left buffer"})
-vim.keymap.set("n", "bl", ":bnext<cr>", {desc = "Go to right buffer"})
+vim.keymap.set("n", "H", ":bprev<cr>", {desc = "Go to left buffer"})
+vim.keymap.set("n", "L", ":bnext<cr>", {desc = "Go to right buffer"})
 vim.keymap.set("n", "<leader>bd", ":bd<cr>", {desc = "Delete buffer"})
-vim.keymap.set("n", "<leader>e", ":NnnPicker<cr>")
+vim.keymap.set("n", "<leader>e", ":Neotree<cr>")
 
 -- Diagnostics
 vim.keymap.set("n", "<leader>dd", 
@@ -32,6 +32,7 @@ vim.keymap.set('n', '<leader>ds', function()
   vim.diagnostic.config({ virtual_lines = new_config })
 end, { desc = 'Toggle diagnostic virtual_lines' })
 
+vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, {desc = "Code actions"});
 -- Terminal
 vim.keymap.set("n", "<C-t>", "<cmd>ToggleTerm direction=float<cr>")
 vim.keymap.set("t", "<C-t>", "<cmd>ToggleTerm direction=float<cr>")
